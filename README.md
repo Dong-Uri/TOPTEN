@@ -8,14 +8,14 @@
 
   - 이동우
     - Main Task
-    - BE
+        - BE
     - Sub Task
-    - FE
+        - FE
   - 이성훈
     - Main Task
-    - FE
+        - FE
     - Sub Task
-    - UX/UI
+        - UX/UI
 
 - 목표 서비스
 
