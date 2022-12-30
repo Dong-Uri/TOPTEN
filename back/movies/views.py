@@ -10,6 +10,8 @@ from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Genre, Movie, Comment, Profile, Message
 from .serializers import MovieListSerializer, MovieSerializer, CommentSerializer, ProfileSerializer, MessageSerializer
 
+import logging
+
 # Create your views here.
 @api_view(['GET'])
 # @permission_classes([IsAuthenticated])
@@ -588,6 +590,7 @@ def message(request, profile_pk):
 
 @api_view(['POST'])
 def message_send(request, to_pk, from_pk):
+    logging.warning("Can't delete message yet")
     to_user = get_object_or_404(Profile, pk=to_pk)
     from_user = get_object_or_404(Profile, pk=from_pk)
     serializer = MessageSerializer(data=request.data)
@@ -597,6 +600,7 @@ def message_send(request, to_pk, from_pk):
 
 @api_view(['GET'])
 def recommend(request, profile_pk, gender, method):
+    logging.info("Need More User Data")
     user = get_object_or_404(Profile, pk=profile_pk)
     if method == 1:
         if gender == 3:
